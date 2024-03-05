@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: fastapi-app
 spec:
-  type: LoadBalancer  # Use NodePort or ClusterIP for internal access only
+  type: NodePort
   ports:
-  - port: 8000
-    targetPort: 8000
+    - port: 8000
+      targetPort: 8000
+      nodePort: 30080  # Optional: Specify a node port in the range 30000-32767; if not specified, one will be allocated automatically
   selector:
     app: fastapi-app
