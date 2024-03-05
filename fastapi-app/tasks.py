@@ -2,7 +2,7 @@ from huey_config import huey
 from redis import Redis
 
 # Initialize Redis client
-redis_client = Redis(host='localhost', port=6379, db=0, decode_responses=True)
+redis_client = Redis(host='redis', port=6379, db=0, decode_responses=True)
 
 @huey.task()
 def insert_key(key, value):
