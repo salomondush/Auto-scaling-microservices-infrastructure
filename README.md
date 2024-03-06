@@ -33,7 +33,7 @@ Sure, here's a brief explanation of important files and directories in the proje
     - `redis-service.yaml`: A Kubernetes service for the Redis instance.
   - `scripts/`: This directory contains scripts for building and deploying the application.
     - `docker_build_push.sh`: This script builds app docker image and pushes it to a Docker registry.
-    - `deploy_k8s.sh`: This script deploys the application to a Kubernetes cluster.
+    - `deploy_k8s.sh`: This script deploys the application to a Kubernetes cluster including Horizontal Pod Autoscaler (HPA) for fast-api and huey-consumer services
     - `undeploy_k8s.sh`: This script undeploys the application from a Kubernetes cluster.
   - `main.py`: This is the main entry point for the FastAPI application.
   - `requirements.txt`: Lists the Python package dependencies for the application.
