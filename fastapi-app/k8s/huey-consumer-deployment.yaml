@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: huey-consumer-deployment
+spec:
+  replicas: 1  # You can adjust the number of replicas
+  selector:
+    matchLabels:
+      app: huey-consumer
+  template:
+    metadata:
+      labels:
+        app: huey-consumer
+    spec:
+      containers:
+      - name: huey-consumer
+        image: dushims/fastapi-app  # Use the same image if Huey is in the same codebase
+        command: ["huey_consumer"]
+        args: ["tasks.huey"]  # Adjust the command to start your Huey consumer
+        env:
+          - name: REDIS_HOST
+            value: "redis"  # Ensure this matches your Redis service name in Kubernetes
+        resources:
+          requests:
+            cpu: 400m

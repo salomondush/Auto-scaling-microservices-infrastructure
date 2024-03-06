@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fastapi-deployment
 spec:
-  replicas: 2  # You can adjust the number of replicas
+  replicas: 1  # You can adjust the number of replicas
   selector:
     matchLabels:
       app: fastapi-app
@@ -20,8 +20,6 @@ spec:
         env:
           - name: REDIS_HOST
             value: "redis"
-
-      - name: huey-consumer
-        image: dushims/fastapi-app  # Use the same image if Huey is in the same codebase
-        command: ["python"]
-        args: ["huey_consumer.py", "tasks.huey"]  # Adjust the command to start your Huey consumer
+        resources:
+          requests:
+            cpu: 400m
