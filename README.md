@@ -51,7 +51,7 @@ You can run the project manually by building and pushing the Docker image, then 
     cd <project-directory>
     ```
 
-2. **Build and push the Docker image**: Navigate to the [`scripts`](scripts/) directory and run the `docker_build_push.sh` script:
+2. **Build and push the Docker image**: Navigate to the [`scripts`](scripts/) directory and run the `docker_build_push.sh` script. Note that you may need to log into your docker hub account:
 
     ```bash
     cd scripts
@@ -85,9 +85,4 @@ hey -z 3m -c 100 http://localhost:8000/test
 
 Adjust the `-z` (duration) and `-c` (concurrency) parameters as needed. Monitor the HPA and pod count during and after the test:
 
-```bash
-watch kubectl get hpa
-watch kubectl get pods
-```
-
-You should observe the number of pods increasing in response to the load, demonstrating the HPA's capability to scale your FastAPI application dynamically. After traffic generation is done, kubernetes will scale down the pods to the minimum number (however, not as fast as it scales up to prevent instability).
+On Docker Desktop, you should observe the number of pods increasing in response to the load, demonstrating the HPA's capability to scale your FastAPI application dynamically. After traffic generation is done, kubernetes will scale down the pods to the minimum number (however, not as fast as it scales up to prevent instability).
