@@ -6,6 +6,8 @@ The application models a simple task queue system where users can submit data to
 
 The application is deployed as a Kubernetes deployment and service, with a separate deployment for the Huey consumer and a Redis instance. The project also includes scripts for building and deploying the application.
 
+[**Video Demo***](https://www.loom.com/share/e607319673ee46d597b373e561b50854?sid=73727263-d6ed-423a-a1bf-61df7580210f)
+
 ## Prerequisites
 
 1. **macOS**: This guide is tailored for macOS. Some commands might differ on other operating systems.
