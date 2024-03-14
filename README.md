@@ -1,4 +1,4 @@
-# FastAPI with Huey and Redis Queue Project
+# Auto Scaling Microservices Infrastructure
 
 This project demonstrates a FastAPI application that uses Huey as a task queue with Redis as the backend, orchestrated using Kubernetes on Docker Desktop for macOS. 
 
